@@ -72,18 +72,48 @@
 // Выводить приветствие при первом и третьем входе на сайт!
 // --------------------------------------
 
-let simpleNumbers = [];
+// let simpleNumbers = [];
 
-for (let i=1; i<=1000; i++) {
-  let a = 0;
-  for (let c=1; c<=1000; c++) {
-    let x = i % c;
-    if (x==0) a++;    
-  }
-  if (a<=2) simpleNumbers.push(i);
-}
+// for (let i=1; i<=1000; i++) {
+//   let a = 0;
+//   for (let c=1; c<=1000; c++) {
+//     let x = i % c;
+//     if (x==0) a++;    
+//   }
+//   if (a<=2) simpleNumbers.push(i);
+// }
 
-console.log(simpleNumbers);
+// console.log(simpleNumbers);
 
 // Нашли массив простых чисел
+// --------------------------------------
+
+function cleaner (x) {
+    $(`#btn-${x}`).remove();
+}
+
+function delBtn () {
+    let numId = event.target.id.slice(4);
+    cleaner (numId);    
+    numBtns.push(numId);
+    localStorage.setItem('numBtns', JSON.stringify(numBtns));
+    alert(`You have removed button ${numId} just now!!!`)
+}
+
+let numBtns = JSON.parse(localStorage.getItem('numBtns'));
+if (numBtns === null) numBtns = [];
+
+for (let i=1;i<=10;i++) {
+    let newButton = document.createElement('button');
+    newButton.className = 'btn';
+    newButton.id = `btn-${i}`;
+    newButton.innerText = `button ${i}`;
+    document.body.append(newButton);
+}
+
+numBtns.forEach(y => cleaner(y));
+
+$('body').on('click', '.btn', delBtn);
+
+// Выполнили задание с удалением кнопок по клику
 // --------------------------------------
