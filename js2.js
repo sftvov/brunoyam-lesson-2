@@ -55,19 +55,35 @@
 // Выводить приветствие при первом запуске!
 // --------------------------------------
 
-let visit = localStorage.getItem("exist");
+// let visit = localStorage.getItem("numberOfVisit");
 
-if (visit) {
-  visit++;
-  localStorage.setItem("exist", visit);
-} else {
-  visit = 1;
-  localStorage.setItem("exist", 1);
-}
+// if (visit) {
+//   visit++;
+//   localStorage.setItem("numberOfVisit", visit);
+// } else {
+//   visit = 1;
+//   localStorage.setItem("numberOfVisit", 1);
+// }
 
-if (visit == 1 || visit == 3) {
-  alert("hello");
-}
+// if (visit == 1 || visit == 3) {
+//   alert("hello");
+// }
 
 // Выводить приветствие при первом и третьем входе на сайт!
+// --------------------------------------
+
+let simpleNumbers = [];
+
+for (let i=1; i<=1000; i++) {
+  let a = 0;
+  for (let c=1; c<=1000; c++) {
+    let x = i % c;
+    if (x==0) a++;    
+  }
+  if (a<=2) simpleNumbers.push(i);
+}
+
+console.log(simpleNumbers);
+
+// Нашли массив простых чисел
 // --------------------------------------
