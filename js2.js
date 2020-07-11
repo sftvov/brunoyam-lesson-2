@@ -17,6 +17,7 @@
 //   console.log(element);
 // }
 
+// Общая информаци по массивам
 // ---------------------
 
 // let numArray = [1, 2, 3];
@@ -29,17 +30,44 @@
 
 // console.log(secondArray);
 
+// Создали массив квадратов другого массива
 // ------------------
 
-let newArray = [1, 2, 3, 4, 1234];
-let sum = 0;
-let pr = 1;
+// let newArray = [1, 2, 3, 4, 1234];
+// let sum = 0;
+// let pr = 1;
 
-for (el of newArray) {
-  sum += el;
-  pr *= el;
+// for (el of newArray) {
+//   sum += el;
+//   pr *= el;
+// }
+
+// console.log(sum, pr);
+
+// подсчитали сумму и произведение массива
+// -------------------------
+
+// if (!localStorage.getItem("exist")) {
+//   alert("hello");
+//   localStorage.setItem("exist", "1");
+// }
+
+// Выводить приветствие при первом запуске!
+// --------------------------------------
+
+let visit = localStorage.getItem("exist");
+
+if (visit) {
+  visit++;
+  localStorage.setItem("exist", visit);
+} else {
+  visit = 1;
+  localStorage.setItem("exist", 1);
 }
 
-console.log(sum, pr);
+if (visit == 1 || visit == 3) {
+  alert("hello");
+}
 
-// -------------------------
+// Выводить приветствие при первом и третьем входе на сайт!
+// --------------------------------------
