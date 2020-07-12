@@ -8,7 +8,6 @@ html {
     padding: 10px;
     background-color: #ffeeee;      
 }
-
 body {
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +19,6 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px #ddd;    
 }
-
 .btn {
     font-weight: bold;
     margin: 10px;

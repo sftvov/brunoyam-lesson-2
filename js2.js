@@ -88,13 +88,13 @@
 // Нашли массив простых чисел
 // --------------------------------------
 
-function cleaner (x) {
+function cleaner(x) {
     $(`#btn-${x}`).remove();
 }
 
-function delBtn () {
+function delBtn() {
     let numId = event.target.id.slice(4);
-    cleaner (numId);    
+    cleaner(numId);
     numBtns.push(numId);
     localStorage.setItem('numBtns', JSON.stringify(numBtns));
     alert(`You have removed button ${numId} just now!!!`)
@@ -103,7 +103,7 @@ function delBtn () {
 let numBtns = JSON.parse(localStorage.getItem('numBtns'));
 if (numBtns === null) numBtns = [];
 
-for (let i=1;i<=10;i++) {
+for (let i = 1; i <= 10; i++) {
     let newButton = document.createElement('button');
     newButton.className = 'btn';
     newButton.id = `btn-${i}`;
